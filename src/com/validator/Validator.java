@@ -19,7 +19,7 @@ public class Validator {
 		String empIdRegex = "^[A-Za-z0-9]{6,10}$";
 		
 		if(!empId.matches(empIdRegex)) {
-			throw new ValidationException("Invalid Email");
+			throw new ValidationException("Invalid EmpID");
 		}
 	}
 }

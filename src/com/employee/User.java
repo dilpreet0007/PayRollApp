@@ -1,5 +1,7 @@
 package com.employee;
 
+import com.auth.HashPassword;
+
 public class User {
 	private String userName;
 	private String pass;
@@ -7,7 +9,7 @@ public class User {
 	
 	public User(String userName,String pass,String role) {
 		this.userName = userName;
-		this.pass = pass;
+		this.pass = HashPassword.hashPassword(pass);
 		this.role = role;
 	}
 
@@ -26,4 +28,13 @@ public class User {
 	public void setPass(String pass) {
 		this.pass = pass;
 	}
+
+	public String getRole() {
+		return role;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
+	}
+	
 }
