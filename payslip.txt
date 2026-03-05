@@ -1,0 +1,18 @@
+
+======= PAYSLIP ==========
+Month        : January
+Employee ID  : davi121
+Employee Name: David
+
+----- Earnings -----
+Basic Salary : 600000.0
+HRA          : 30000.0
+DA           : 10000.0
+Allowances   : 12500.0
+
+----- Deductions -----
+PF           : 72000.0
+Tax          : 65250.0
+
+Net Pay      : 515250.0
+============================

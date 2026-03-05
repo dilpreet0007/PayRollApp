@@ -1,6 +1,9 @@
 package com.salary;
 
 import com.employee.Employee;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 
 public class PaySlip {
 	private Employee employee;
@@ -28,6 +31,19 @@ public class PaySlip {
             + "Tax          : " + SalaryComponent.tax + "\n\n"
             + "Net Pay      : " + SalaryComponent.netPay + "\n"
             + "============================\n";
+	}
+	
+	public void savePayslipToFile() {
+	    try {
+	        BufferedWriter writer = new BufferedWriter(new FileWriter("payslip.txt"));
+	        writer.write(this.toString());
+	        writer.close();
+
+	        System.out.println("Payslip saved successfully.");
+
+	    } catch (IOException e) {
+	        e.printStackTrace();
+	    }
 	}
 	
 }

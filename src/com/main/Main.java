@@ -11,6 +11,12 @@ import com.employee.Employee;
 import com.validator.ValidationException;
 import com.validator.Validator;
 
+/*
+ * UC3 PaySlip is generated in this case
+ * @version 3.0
+ * @author Dilpreet
+ */
+
 public class Main {
 
 	public static void main(String[] args) {
@@ -60,6 +66,8 @@ public class Main {
 			PaySlip slip = PayRollService.generatePayslip(emp,"January",600000,30000,10000,12500);
 			
 			System.out.print(slip.toString());
+			
+			slip.savePayslipToFile();
 			
 			
 //		}
