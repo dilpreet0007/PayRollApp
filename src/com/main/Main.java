@@ -1,7 +1,10 @@
 package com.main;
 import java.util.*;
 
+
 import com.employee.User;
+import com.salary.PayRollService;
+import com.salary.PaySlip;
 import com.auth.Auth;
 import com.data.EmployeeData;
 import com.employee.Employee;
@@ -53,6 +56,10 @@ public class Main {
 			boolean logedIn = Auth.auth(u, p);
 			
 			if(logedIn) System.out.println("Login Succesfull!!");
+			
+			PaySlip slip = PayRollService.generatePayslip(emp,"January",600000,30000,10000,12500);
+			
+			System.out.print(slip.toString());
 			
 			
 //		}
