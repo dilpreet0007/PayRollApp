@@ -1,18 +1,18 @@
 
 ======= PAYSLIP ==========
 Month        : January
-Employee ID  : davi121
-Employee Name: David
+Employee ID  : soe1212
+Employee Name: Soe
 
 ----- Earnings -----
-Basic Salary : 600000.0
-HRA          : 30000.0
-DA           : 10000.0
+Basic Salary : 650000.0
+HRA          : 32000.0
+DA           : 10500.0
 Allowances   : 12500.0
 
 ----- Deductions -----
-PF           : 72000.0
-Tax          : 65250.0
+PF           : 78000.0
+Tax          : 70500.0
 
-Net Pay      : 515250.0
+Net Pay      : 556500.0
 ============================

@@ -13,8 +13,8 @@ import com.validator.ValidationException;
 import com.validator.Validator;
 
 /*
- * UC3 PaySlip is generated and coverted to .txt file in this case
- * @version 4.0
+ * UC5 Pay is stored and displayed top 3 pays
+ * @version 5.0
  * @author Dilpreet
  */
 
@@ -25,28 +25,29 @@ public class Main {
 		
 		Scanner sc = new Scanner(System.in);
 		
-//		try {
-//			System.out.print("Enter your Name: ");
-//			String name = sc.nextLine();
-//			System.out.print("Enter your UserName: ");
-//			String userName = sc.nextLine();
-//			System.out.print("Enter your Password: ");
-//			String pass = sc.nextLine();
-//			System.out.print("Enter your Email: ");
-//			String email = sc.nextLine();
-//			Validator.isValidEmail(email);
-//			System.out.print("Enter your PhoneNumber: ");
-//			String phoneNumber = sc.nextLine();
-//			Validator.isValidPhoneNumber(phoneNumber);
-//			System.out.print("Enter your EmpID: ");
-//			String empID = sc.nextLine();
-//			Validator.isValidEmpId(empID);
+		try {
+			System.out.print("Enter your Name: ");
+			String name = sc.nextLine();
+			System.out.print("Enter your UserName: ");
+			String userName = sc.nextLine();
+			System.out.print("Enter your Password: ");
+			String pass = sc.nextLine();
+			Validator.isValidPass(pass);
+			System.out.print("Enter your Email: ");
+			String email = sc.nextLine();
+			Validator.isValidEmail(email);
+			System.out.print("Enter your PhoneNumber: ");
+			String phoneNumber = sc.nextLine();
+			Validator.isValidPhoneNumber(phoneNumber);
+			System.out.print("Enter your EmpID: ");
+			String empID = sc.nextLine();
+			Validator.isValidEmpId(empID);
 			
-			User user = new User("David12","David123","regular");
+			User user = new User("David12","David@123","regular");
 			Employee emp = new Employee("David","David@gmail.com","9898989898","davi121");
 			
-			User user2 = new User("Soe12","Soe321","manager");
-			Employee emp2 = new Employee("soe","soe@gmail.com","9898989877","soe2122");
+			User user2 = new User(userName,pass,"manager");
+			Employee emp2 = new Employee(name,email,phoneNumber,empID);
 			
 			EmployeeData.userMap.put(user.getUserName(), user);
 			EmployeeData.empMap.put(emp.getEmpId(), emp);
@@ -64,12 +65,12 @@ public class Main {
 			
 			if(logedIn) System.out.println("Login Succesfull!!");
 			
-			PaySlip slip = PayRollService.generatePayslip(emp,"January",600000,30000,10000,12500);
-			PaySlip slip1 = PayRollService.generatePayslip(emp,"February",700000,35000,11000,12500);
-			PaySlip slip2 = PayRollService.generatePayslip(emp,"March",650000,32000,10500,12500);
-			//System.out.print(slip.toString());
+			PaySlip slip = PayRollService.generatePayslip(emp2,"January",600000,30000,10000,12500);
+			PaySlip slip1 = PayRollService.generatePayslip(emp2,"February",700000,35000,11000,12500);
+			PaySlip slip2 = PayRollService.generatePayslip(emp2,"March",650000,32000,10500,12500);
+			System.out.print(slip.toString());
 			
-			//slip.savePayslipToFile();
+			slip.savePayslipToFile();
 			
 			for(int i=0;i<PayRollService.pay.size() && i<3;i++) {
 				Item item = PayRollService.pay.get(i);
@@ -78,10 +79,10 @@ public class Main {
 			}
 			
 			
-//		}
-//		catch(ValidationException e) {
-//			System.out.println(e.getMessage());
-//		}
+		}
+		catch(ValidationException e) {
+			System.out.println(e.getMessage());
+		}
 
 	}
 

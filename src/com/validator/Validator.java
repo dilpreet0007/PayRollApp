@@ -22,4 +22,11 @@ public class Validator {
 			throw new ValidationException("Invalid EmpID");
 		}
 	}
+	public static void isValidPass(String pass) throws ValidationException{
+		String passRegex = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[!@#$%^&*])[A-Za-z\\d!@#$%^&*]{8,}$";
+		
+		if(!pass.matches(passRegex)) {
+			throw new ValidationException("Use Strong Password");
+		}
+	}
 }
