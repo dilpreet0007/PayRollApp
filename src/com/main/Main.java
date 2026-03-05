@@ -3,6 +3,7 @@ import java.util.*;
 
 
 import com.employee.User;
+import com.salary.Item;
 import com.salary.PayRollService;
 import com.salary.PaySlip;
 import com.auth.Auth;
@@ -12,8 +13,8 @@ import com.validator.ValidationException;
 import com.validator.Validator;
 
 /*
- * UC3 PaySlip is generated in this case
- * @version 3.0
+ * UC3 PaySlip is generated and coverted to .txt file in this case
+ * @version 4.0
  * @author Dilpreet
  */
 
@@ -64,10 +65,17 @@ public class Main {
 			if(logedIn) System.out.println("Login Succesfull!!");
 			
 			PaySlip slip = PayRollService.generatePayslip(emp,"January",600000,30000,10000,12500);
+			PaySlip slip1 = PayRollService.generatePayslip(emp,"February",700000,35000,11000,12500);
+			PaySlip slip2 = PayRollService.generatePayslip(emp,"March",650000,32000,10500,12500);
+			//System.out.print(slip.toString());
 			
-			System.out.print(slip.toString());
+			//slip.savePayslipToFile();
 			
-			slip.savePayslipToFile();
+			for(int i=0;i<PayRollService.pay.size() && i<3;i++) {
+				Item item = PayRollService.pay.get(i);
+				System.out.print(item.month + " --> " + item.value);
+				System.out.println();
+			}
 			
 			
 //		}
